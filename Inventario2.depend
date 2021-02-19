@@ -1,0 +1,43 @@
+# depslib dependency file v1.0
+1343924297 source:c:\documents and settings\administrador\mis documentos\dropbox\cinvestav\c++ projects\inventario2\main.cpp
+	<iostream>
+	<windows.h>
+	<time.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+	<fstream>
+
+1343924297 source:c:\documents and settings\jeff\mis documentos\dropbox\cinvestav\c++ projects\inventario2\main.cpp
+	<iostream>
+	<windows.h>
+	<time.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+	<fstream>
+
+1344317580 source:c:\documents and settings\administrador\mis documentos\dropbox\cinvestav\c++ projects\inventario3\main.cpp
+	<iostream>
+	<windows.h>
+	<time.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+	<fstream>
+
+1613696182 source:d:\software ideas\inventario\inventario2\main.cpp
+	<iostream>
+	<windows.h>
+	<time.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+	<fstream>
+	"Headers/Structs.h"
+	"Headers/Funciones.h"
+
+1613696476 d:\software ideas\inventario\inventario2\headers\structs.h
+
+1613696402 d:\software ideas\inventario\inventario2\headers\funciones.h
+

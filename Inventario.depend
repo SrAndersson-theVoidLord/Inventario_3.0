@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1343347623 source:c:\documents and settings\administrador\mis documentos\dropbox\cinvestav\c++ projects\inventario\main.cpp
+	<iostream>
+	<windows.h>
+	<time.h>
+	<cstdlib>
+	<conio.h>
+
+1343357501 source:c:\documents and settings\jeff\mis documentos\dropbox\cinvestav\c++ projects\inventario\main.cpp
+	<iostream>
+	<windows.h>
+	<time.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+
