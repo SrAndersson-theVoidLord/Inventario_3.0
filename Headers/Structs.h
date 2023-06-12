@@ -3,7 +3,7 @@
 
 
 
-///Defines:
+///[LNG 2023-06-11] -Defines arrow keys:
 
 #define Color_Red 12
 #define Color_Def 15
@@ -19,6 +19,7 @@
 #define KEY_ESC 27
 #define Max_Chars 12
 
+/* [LNG 2023-06-11] - Struct definition */
 struct Article_Struct
 {
     char Name[Max_Chars];

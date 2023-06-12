@@ -1,9 +1,9 @@
 
 /********************************************************************
-*                         INVENTORY SYSTEM 3.0                      *
+*   [LNG 2023-06-11] -    INVENTORY SYSTEM 3.0                      *
 *    This program is a Inventory System with Output/Input Files.    *
 *                           Version 1.0                             *
-*      Lucas Nicolas Greco (grecolucas477@yahoo.com.ar)             *
+*      Lucas Nicolas Greco (lucasnicolas.greco@gmail.com)           *
 *                                                                   *
 ********************************************************************/
 

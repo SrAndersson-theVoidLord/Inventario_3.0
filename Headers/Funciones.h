@@ -26,9 +26,9 @@ float Total_Inventary = 0;
 
 
 
-
+/* 
 /********************************************************************
-*                       Function:  gotoxy                           *
+*  [LNG 2023-06-11]     Function:  gotoxy                           *
 * Input Arguments:                                                  *
 *- Integers: Coordenates X and Y in screen.                         *
 * Output Arguments:                                                 *
@@ -43,7 +43,7 @@ void gotoxy(int x,int y)
 }
 
 /********************************************************************
-*                      Function: Select_Option                      *
+*   [LNG 2023-06-11]   Function: Select_Option                      *
 *        This function only present de program to the user.         *
 ********************************************************************/
 void Show_Title (void)
@@ -103,7 +103,7 @@ void Show_Title (void)
 }
 
 /********************************************************************
-*                    Function:  Wait_Option                         *
+* [LNG 2023-06-11] - Function:  Wait_Option                         *
 * Input Arguments:                                                  *
 *                                                                   *
 * Output Arguments:                                                 *
@@ -212,7 +212,7 @@ int Wait_Option (void)
 }
 
 /********************************************************************
-*                     Function:  New_Product                        *
+* [LNG 2023-06-11] -  Function:  New_Product                        *
 * Input Arguments:                                                  *
 *                                                                   *
 * Output Arguments:                                                 *
@@ -349,7 +349,7 @@ int New_Product (void)
 }
 
 /********************************************************************
-*                   Function:  Delete_Product                       *
+*  [LNG 2023-06-11] Function:  Delete_Product                       *
 * Input Arguments:                                                  *
 *                                                                   *
 * Output Arguments:                                                 *
@@ -472,7 +472,7 @@ int Delete_Product (void)
 
 
 /********************************************************************
-*                    Function:  Buy_Product                         *
+* [LNG 2023-06-11] - Function:  Buy_Product                         *
 * Input Arguments:                                                  *
 *                                                                   *
 * Output Arguments:                                                 *
@@ -601,7 +601,7 @@ int Buy_Product (void)
 }
 
 /********************************************************************
-*                    Function:  Sale_Product                        *
+* [LNG 2023-06-11] - Function:  Sale_Product                        *
 * Input Arguments:                                                  *
 *                                                                   *
 * Output Arguments:                                                 *
@@ -738,7 +738,7 @@ int Sell_Product (void)
 }
 
 /********************************************************************
-*                    Function:  Report_Product                      *
+* [LNG 2023-06-11] - Function:  Report_Product                      *
 * Input Arguments:                                                  *
 *                                                                   *
 * Output Arguments:                                                 *
@@ -834,7 +834,7 @@ int Report_Product (void)
 
 
 /********************************************************************
-*                  Function:  Get_Elements_Number                   *
+* [LNG 2023-06-11] Function:  Get_Elements_Number                   *
 * Input Arguments:                                                  *
 *                                                                   *
 * Output Arguments:                                                 *
@@ -855,7 +855,7 @@ int Get_Elements_Number (void)
 
 
 /********************************************************************
-*                Function:  Init_Structure_Elements                 *
+*[LNG 2023-06-11]Function:  Init_Structure_Elements                 *
 * Input Arguments:                                                  *
 *- Integer Array Number Element.                                    *
 * Output Arguments:                                                 *
@@ -876,7 +876,7 @@ void Init_Structure_Elements (int Article)
 
 
 /********************************************************************
-*                       Function:  Save_File                        *
+*[LNG 2023-06-11] -     Function:  Save_File                        *
 * Input Arguments:                                                  *
 *                                                                   *
 * Output Arguments:                                                 *
@@ -1022,7 +1022,7 @@ int Save_File (void)
 }
 
 /********************************************************************
-*                       Function:  Load_File                        *
+* [LNG 2023-06-11] -    Function:  Load_File                        *
 * Input Arguments:                                                  *
 *                                                                   *
 * Output Arguments:                                                 *
@@ -1182,7 +1182,7 @@ int Load_File (void)
 }
 
 /********************************************************************
-*                     Function:  Show_Error                         *
+* [LNG 2023-06-11] -  Function:  Show_Error                         *
 * Input Arguments:                                                  *
 *- Pointer to String, Integet Delay Time.                           *
 * Output Arguments:                                                 *
