@@ -26,7 +26,7 @@ float Total_Inventary = 0;
 
 
 
-/* 
+/*
 /********************************************************************
 *  [LNG 2023-06-11]     Function:  gotoxy                           *
 * Input Arguments:                                                  *
@@ -110,105 +110,116 @@ void Show_Title (void)
 *- Integer value related with a option menu.                        *
 * This function wait until the user enter a option.                 *
 ********************************************************************/
-int Wait_Option (void)
-{
-    int Cursor_Pos = 14;
-
-    system("cls");
-    Show_Title ();
-
-    gotoxy(30,10);
-    cout << "SELECT A OPTION.";
-
-    gotoxy(5,14);
+// Display the list of options
+void Show_Options() {
+    gotoxy(5, 14);
     cout << "(1) NEW PRODUCT.";
 
-    gotoxy(5,16);
+    gotoxy(5, 16);
     cout << "(2) DELETE PRODUCT.";
 
-    gotoxy(5,18);
+    gotoxy(5, 18);
     cout << "(3) BUY PRODUCT.";
 
-    gotoxy(5,20);
+    gotoxy(5, 20);
     cout << "(4) SALE PRODUCT.";
 
-    gotoxy(5,22);
+    gotoxy(5, 22);
     cout << "(5) SHOW REPORT.";
 
-    gotoxy(5,24);
+    gotoxy(5, 24);
     cout << "(6) SAVE REPORT.";
 
-    gotoxy(5,26);
+    gotoxy(5, 26);
     cout << "(7) LOAD REPORT.";
 
-    gotoxy(5,28);
+    gotoxy(5, 28);
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), Color_Green);
     cout << "(8) EXIT." << endl;
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), Color_Def);
 
-    gotoxy(17,30);
-    cout << "Use Key Pad To Select One Or Press ESC To EXIT. " << endl;
+    gotoxy(17, 30);
+    cout << "Use Key Pad To Select One Or Press ESC To EXIT." << endl;
+}
 
-    gotoxy(3,Cursor_Pos);
+// Display the title and options on the screen
+void Show_Menu() {
+    gotoxy(30, 10);
+    cout << "SELECT AN OPTION.";
+    Show_Options();
+}
+
+
+// Highlight the current option
+void Highlight_Option(int Cursor_Pos) {
+    gotoxy(3, Cursor_Pos);
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), Color_Green);
     cout << (char)Cursor;
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), Color_Def);
-    gotoxy(64,30);
+    gotoxy(64, 30);  // Reset cursor to input area
+}
+// Highlight the current selected option
+void Display_Cursor(int Cursor_Pos) {
+    Highlight_Option(Cursor_Pos);  // Highlight new position
+}
 
-    do{
-        if (kbhit())
-        {
-            KEY_PAD = getch();
+// Clear the cursor from its previous position only
+void Clear_Highlight(int Prev_Cursor_Pos) {
+    gotoxy(3, Prev_Cursor_Pos); // Move to the previous cursor position
+    cout << " ";  // Replace the cursor with a blank space
+}
 
-            switch (KEY_PAD)
-            {
-                case KEY_UP:
-                {
-                    if (Cursor_Pos >= 16) Cursor_Pos = Cursor_Pos - 2;
-                }
+
+
+// Handle input and update cursor position or return selected option
+int Handle_Input(int &Cursor_Pos, int &Prev_Cursor_Pos) {
+    if (kbhit()) {
+        int KEY_PAD = getch();
+        Prev_Cursor_Pos = Cursor_Pos;  // Store the previous position
+
+        switch (KEY_PAD) {
+            case KEY_UP:
+                if (Cursor_Pos >= 16) Cursor_Pos -= 2;
                 break;
 
-                case KEY_DOWN:
-                {
-                    if (Cursor_Pos <= 26) Cursor_Pos = Cursor_Pos + 2;
-                }
+            case KEY_DOWN:
+                if (Cursor_Pos <= 26) Cursor_Pos += 2;
                 break;
 
-                case KEY_ENTER:
-                {
-                    switch (Cursor_Pos)
-                    {
-                        case 14: return 1; break;
-                        case 16: return 2; break;
-                        case 18: return 3; break;
-                        case 20: return 4; break;
-                        case 22: return 5; break;
-                        case 24: return 6; break;
-                        case 26: return 7; break;
-                        case 28: return 8; break;
-                    }
-                }
-                break;
+            case KEY_ENTER:
+                return (Cursor_Pos - 14) / 2 + 1;
 
-                case KEY_ESC: return 8; break;
+            case KEY_ESC:
+                return 8;
 
-            }
-
-            for (int i = 0; i<16 ; i+=2)
-            {
-                gotoxy(3,14+i);
-                cout << (char) 0;
-            }
-
-            gotoxy(3,Cursor_Pos);
-            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), Color_Green);
-            cout << (char)Cursor;
-            SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), Color_Def);
-            gotoxy(64,30);
+            default:
+                return -1;  // No action needed for other keys
         }
-    }while (KEY_PAD!=27);
 
-    return 8;
+        Clear_Highlight(Prev_Cursor_Pos);  // Clear cursor from the old position
+        Display_Cursor(Cursor_Pos);  // Move to the new position
+    }
+
+    return -1;  // No valid input yet
+}
+int Wait_Option(void) {
+    int Cursor_Pos = 14;
+    int Prev_Cursor_Pos = Cursor_Pos; // Track the previous position
+
+    system("cls");
+    Show_Title();
+    Show_Menu();
+    Display_Cursor(Cursor_Pos);
+
+    int option;
+    do {
+        option = Handle_Input(Cursor_Pos, Prev_Cursor_Pos);
+        if (option != -1) {
+            return option;
+        }
+    } while (true);
+
+    return 8; // In case the loop exits (although it should return earlier)
 }
 
 /********************************************************************
